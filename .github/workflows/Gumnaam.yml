@@ -1,9 +1,6 @@
-name: Run Workflow
+name: Gumnaam
 
 on:
-  schedule:
-    # Runs at 0:00 UTC every 6 hours
-    - cron: '0 */6 * * *'
   push:
     branches:
       - main
@@ -12,8 +9,7 @@ on:
       - main
 
 jobs:
-
-   run-script:
+  run-script:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,6 +34,6 @@ jobs:
       - name: Post Checkout Repository
          git clone https://github.com/1322Gumnaam/Gumnaam.git
 
+     
       - name: Run Python script
         run: python3 Gumnaam.py
-        
