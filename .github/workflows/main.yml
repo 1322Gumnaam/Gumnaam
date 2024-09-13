@@ -8,8 +8,7 @@ on:
     branches:
       - main
 
-jobs:
- 
+jobs: 
   run-script:
    runs-on: ubuntu-latest
    timeout-minutes: 99999
@@ -29,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: pip install telebot aiogram flask virtualenv
 
+      - name: Run Python script
+        run: python3 Gumnaam.py
+
       - name: Post Set up Python
          sudo apt update
          sudo apt install python3
@@ -38,3 +40,8 @@ jobs:
 
       - name: Run Python script
         run: python3 Gumnaam.py
+
+
+
+
+
