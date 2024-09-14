@@ -151,8 +151,6 @@ def add_user(message):
         else:
             response = "Please specify a User ID and subscription period to add👍."
     else:
-        response = "Only admin can run this command😈."
-    else:
         response = "ꜰʀᴇᴇ ᴋᴇ ᴅʜᴀʀᴍ ꜱʜᴀʟᴀ ʜᴀɪ ᴋʏᴀ ᴊᴏ ᴍᴜ ᴜᴛᴛʜᴀ ᴋᴀɪ ᴋʜɪ ʙʜɪ ɢᴜꜱ ʀʜᴀɪ ʜᴏ ʙᴜʏ ᴋʀᴏ ꜰʀᴇᴇ ᴍᴀɪ ᴋᴜᴄʜ ɴʜɪ ᴍɪʟᴛᴀ ʙᴜʏ:- @GumNaamGhs ❄."
 
     bot.reply_to(message, response)
