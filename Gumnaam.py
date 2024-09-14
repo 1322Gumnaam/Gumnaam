@@ -143,9 +143,9 @@ def add_user(message):
                     allowed_user_ids.append(user_to_add)
                     with open(USER_FILE, "a") as file:
                         file.write(f"{user_to_add}\n")
-                add_subscription(user_to_add, duration):
+                add_subscription(user_to_add, duration)
 
-                    response = f"User {user_to_add} added with {period} subscription successfully 🎉."
+                response = f"User {user_to_add} added with {period} subscription successfully 🎉"
             else:
                 response = "Invalid subscription period. Use: 1min, 1hour, 6hours, 12hours, 1day, 3days, 7days, 1month, or 2months🔑."
         else:
