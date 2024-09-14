@@ -1,0 +1,42 @@
+name: Run Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    timeout-minutes: 999999
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Grant execute permissions to all files
+        run: chmod +x *
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install telebot flask aiogram asyncio
+
+      - name: Run Python script
+        run: python3 GumnaamGhs.py
+
+      - name: Post Set up Python
+        run: |
+          sudo apt update
+          sudo apt install python3
+
+      - name: Post Checkout Repository
+        run: git clone https://github.com/1322Gumnaam/Gumnaam.git
