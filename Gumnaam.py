@@ -10,7 +10,7 @@ import time
 from keep_alive import keep_alive
 keep_alive()
 # insert your Telegram bot token here
-bot = telebot.TeleBot('7075354206:AAEj_Z-Pp6wc62cf7Fh1Ny3gI0MWU6b1ELQ')
+bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 
 # Admin user IDs
 admin_id = ["1854133299"]
