@@ -4,7 +4,6 @@ import telebot
 import subprocess
 import datetime
 import os
-import schedule
 import time
 
 from keep_alive import keep_alive
