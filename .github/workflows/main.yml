@@ -1,0 +1,37 @@
+name: Run Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Kolkata'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install telebot flask aiogram asyncio
+
+      - name: Grant execute permissions to necessary files
+        run: chmod +x *  # Specify the script file to avoid changing permissions for all files
+
+      - name: Run Python script
+        run: python3 GumnaamGhs.py
+
+        
