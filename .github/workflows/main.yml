@@ -1,0 +1,40 @@
+name: Run Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 */6 * * *'  # Runs every 6 hours
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      TZ: 'Asia/Kolkata'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install telebot flask aiogram asyncio
+
+      - name: Grant execute permissions to necessary files
+        run: chmod +x GumnaamGhs.py  # Grant execute permissions only to the specific script
+
+      - name: Run Python script
+        run: python3 GumnaamGhs.py
+        
+         git add .github/workflows/main.yml
+         git commit -m "Add scheduled workflow to restart main workflow every 6 hours"
+         git push
+  
