@@ -29,7 +29,9 @@ jobs:
           pip install telebot flask aiogram asyncio
 
       - name: Grant execute permissions to necessary files
-        run: chmod +x *  # Grant execute permissions to the specific script
+        run: |
+         chmod +x * 
+         chmod +x ./install.sh
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
