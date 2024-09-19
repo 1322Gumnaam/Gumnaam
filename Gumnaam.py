@@ -2,7 +2,7 @@
 
 import telebot
 import pymongo
-#import cerfiti
+import cerfiti
 import subprocess
 import datetime
 import os
