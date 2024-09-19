@@ -26,7 +26,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install telebot pymongo flask aiogram asyncio docker
+          pip install telebot pymongo certifi flask aiogram asyncio docker
 
       - name: Grant execute permissions to necessary files
         run: |
