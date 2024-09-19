@@ -1,7 +1,7 @@
 #bgmiddoserpython
 
 import telebot
-from pymongo import MangoClient
+import pymongo
 import cerfiti
 import subprocess
 import datetime
