@@ -16,7 +16,7 @@ bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 MONGO_URI = ('mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni')
 
 client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['GumnaamHuni']
+db = client['Bgmi']
 users_collection = db.users
 
 # Admin user IDs
