@@ -1,8 +1,6 @@
 #bgmiddoserpython
 
 import telebot
-from pymongo import MongoClient
-import certifi
 import subprocess
 import datetime
 import os
@@ -15,12 +13,18 @@ keep_alive()
 bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 
 #detabase
-MONGO_URI = ('mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni')
+from pymongo import MongoClient
+import certifi
 
-client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['soul']
-users_collection = db.users
+MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
 
+try:
+    client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+    db = client['GumnaamHuni']
+    print("MongoDB connection successful.")
+except Exception as e:
+    print("Failed to connect to MongoDB:", str(e))
+    
 # Admin user IDs
 admin_id = ["1854133299"]
 
