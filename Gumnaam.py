@@ -20,7 +20,7 @@ MONGO_URI = ('mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?
 admin_id = ["1854133299"]
 
 client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['bgmi']
+db = client['soul']
 users_collection = db.users
 
 
