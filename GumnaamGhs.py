@@ -1,7 +1,5 @@
 import subprocess
-import pymongo #import MongoClient
 import time
-import certifi
 import os
 import logging
 from aiogram import Bot
@@ -9,7 +7,18 @@ import asyncio
 
 
 API_TOKEN = '7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI'
+from pymongo import MongoClient
+import certifi
+
 MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
+
+try:
+    client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+    db = client['GumnaamHuni']
+    print("MongoDB connection successful.")
+except Exception as e:
+    print("Failed to connect to MongoDB:", str(e))
+    
 ADMIN_ID = '1854133299'
 MAX_RESTARTS = 5
 RESTART_PERIOD = 60  # Seconds
