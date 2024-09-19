@@ -1,8 +1,6 @@
 #bgmiddoserpython
 
 import telebot
-from pymongo import MongoClient
-import certifi
 import subprocess
 import datetime
 import os
@@ -14,14 +12,10 @@ keep_alive()
 # insert your Telegram bot token here
 bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 
-MONGO_URI = ('mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni')
+
 
 # Admin user IDs
 admin_id = ["1854133299"]
-
-client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['soul']
-users_collection = db.users
 
 
 # File to store allowed user IDs and their subscription expiry
