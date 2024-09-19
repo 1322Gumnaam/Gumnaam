@@ -38,8 +38,8 @@ jobs:
 
       - name: Build and run dev container
         run: |
-          docker build -f .devcontainer/Dockerfile -t my-dev-container .
-          docker run --rm my-dev-container python3 /workflow/Gumnaam/GumnaamGhs.py
+          docker build -f .devcontainer/devcontainer.json -t my-dev-container .
+          docker run --rm my-dev-container python3 /workflow/Gumnaam/.devcontainer/devcontainer.json
 
       - name: Run Python script
         run: python3 GumnaamGhs.py
