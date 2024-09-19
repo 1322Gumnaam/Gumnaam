@@ -17,10 +17,6 @@ RESTART_PERIOD = 60  # Seconds
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 bot = Bot(API_TOKEN)
 
-client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-db = client['GumnaamHuni']
-users_collection = db.users
-
 def start_bot():
     """Start the bot script as a subprocess."""
     return subprocess.Popen(['python', 'Gumnaam.py'])
