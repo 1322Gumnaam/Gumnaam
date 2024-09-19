@@ -1,5 +1,7 @@
 import subprocess
+from pymongo import MongoClient
 import time
+import certifi
 import os
 import logging
 from aiogram import Bot
@@ -7,12 +9,17 @@ import asyncio
 
 
 API_TOKEN = '7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI'
+MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
 ADMIN_ID = '1854133299'
 MAX_RESTARTS = 5
 RESTART_PERIOD = 60  # Seconds
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 bot = Bot(API_TOKEN)
+
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client['GumnaamHuni']
+users_collection = db.users
 
 def start_bot():
     """Start the bot script as a subprocess."""
