@@ -2,6 +2,7 @@
 
 import telebot
 from pymongo import MongoClient
+import certifi
 import subprocess
 import datetime
 import os
