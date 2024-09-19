@@ -10,7 +10,7 @@ cat <<EOL > .devcontainer/devcontainer.json
 },
 "postStartCommand": "python3 /workspaces/Gumnaam/GumnaamGhs.py",
 "customizations": {
-"workflow": {
+"vscode": {
 "settings": {
 "python.pythonPath": "/usr/local/bin/python"
 },
@@ -21,7 +21,7 @@ cat <<EOL > .devcontainer/devcontainer.json
 }
 }
 EOL
-git add .devcontainer/devcontainer.json
+git add .devcontainer/Dockerfile
 git commit -m "Add postStartCommand to run Python script automatically"
 git push origin main
 
