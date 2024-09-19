@@ -1,8 +1,8 @@
 #bgmiddoserpython
 
 import telebot
-import pymongo
-#import cerfiti
+from pymongo import MongoClient
+import certifi
 import subprocess
 import datetime
 import os
@@ -16,6 +16,10 @@ bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 
 #detabase
 MONGO_URI = ('mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni')
+
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client['soul']
+users_collection = db.users
 
 # Admin user IDs
 admin_id = ["1854133299"]
