@@ -100,10 +100,10 @@ jobs:
           sudo apt-get install -y mongodb-org-tools
 
       # Step 3: Download Backup
-      - name: Download MongoDB Backup
-        uses: actions/download-artifact@v3
-        with:
-          name: mongodb-backup
+     # - name: Download MongoDB Backup
+      #  uses: actions/download-artifact@v3
+     #   with:
+      #    name: mongodb-backup
 
       # Step 4: Restore MongoDB
       - name: Restore MongoDB
