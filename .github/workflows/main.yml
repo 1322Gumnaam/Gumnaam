@@ -38,7 +38,7 @@ jobs:
 
       - name: Validate MongoDB URI
         run: |
-          echo "MongoDB URI length: ${#secrets.MONGO_URI}"
+          echo "MongoDB URI length: ${#secrets.MONGO_URI}"mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni"
 
       - name: Backup MongoDB
         run: |
