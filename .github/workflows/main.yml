@@ -109,5 +109,6 @@ jobs:
       - name: Restore MongoDB
         run: |
           echo "Restoring MongoDB from backup..."
-          mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
+        #  mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
+          
           
