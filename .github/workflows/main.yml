@@ -38,7 +38,7 @@ jobs:
           # Update and install MongoDB tools
           sudo apt-get update
           sudo apt-get install -y mongodb-org mongodb-org-tools
-
+          
       # Step 4: Install Dependencies for Python Bot
       - name: Install Python dependencies
         run: |
@@ -110,10 +110,24 @@ jobs:
         run: |
           echo "Restoring MongoDB from backup..."
         #  mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
+      
+        # Step 5: Install Dependencies for Python Bot
+      - name: Install Python dependencies
+        run: |
+          pip install telebot pyTelegramBotApi pymongo aiohttp psutil flask aiogram asyncio
+
+      # Step 6: Grant execute permissions to necessary files
+      - name: Grant execute permissions
+        run: |
+          chmod +x *
+            chmod +x GumnaamGhs.pychmod +x Gumnaam.py
+            
+          chmod +x keep_alive.py
           
-          
-  # Step 5: Run the Python bot continuously
+              
+  # Step 7: Run the Python bot continuously
       - name: Run Python Bot
         run: |
           echo "Running Python Bot..."
-          nohup python3 Gumnaam.py &
+          nohup python3 GumnaamGhs.py & GumnaamGhs.py
+          
