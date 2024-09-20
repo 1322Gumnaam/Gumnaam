@@ -9,8 +9,8 @@ import asyncio
 API_TOKEN = '7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI'
 from pymongo import MongoClient
 import certifi
+MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
 
-MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru123@@gumnaamhuni.wsvoh.mongodb.net'
 
 try:
     client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
