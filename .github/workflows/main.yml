@@ -69,8 +69,8 @@ jobs:
         run: |
           echo "Starting MongoDB backup..."
           mkdir -p ./backup  # Create backup directory if it doesn't exist
-          mongodump --uri="${{ secrets.MONGO_URI }}" --out=./backup/mongodb_backup_$(date +%F_%T)
-
+          mongodump --uri="${{ mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni }}" --out=./backup/mongodb_backup_$(date +%F_%T)
+ 
       # Step 3: Upload MongoDB Backup as artifact
       - name: Upload MongoDB Backup
         uses: actions/upload-artifact@v3
