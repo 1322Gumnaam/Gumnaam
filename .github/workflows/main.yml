@@ -26,9 +26,16 @@ jobs:
 
       - name: Install MongoDB Tools
         run: |
-          sudo apt-get update
-          sudo apt-get install -y mongodb-org-tools  # Change to a more complete MongoDB tools package
+          # Add MongoDB GPG key
+          wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
           
+          # Add MongoDB repository
+          echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -cs)/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+          
+          # Update and install MongoDB tools
+          sudo apt-get update
+          sudo apt-get install -y mongodb-org-tools
+
       - name: Backup MongoDB
         run: |
           mkdir -p ./backup  # Create backup directory if it doesn't exist
@@ -42,11 +49,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install telebot mongodb pymongo aiohttp psutil flask aiogram asyncio
+          pip install telebot pymongo aiohttp psutil flask aiogram asyncio
 
       - name: Grant execute permissions to necessary files
         run: | 
-          chmod +x *  # Specify the script file instead of all files
+          chmod +x *
+          chmod +x GumnaamGhs.py  # Specify the script file instead of all files
 
       - name: Run Python script
         run: python3 GumnaamGhs.py
