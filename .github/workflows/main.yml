@@ -36,8 +36,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y mongodb-org-tools
 
+      - name: Validate MongoDB URI
+        run: |
+          echo "MongoDB URI length: ${#secrets.MONGO_URI}"
+
       - name: Backup MongoDB
         run: |
+          echo "Starting MongoDB backup..."
           mkdir -p ./backup  # Create backup directory if it doesn't exist
           mongodump --uri="${{ secrets.MONGO_URI }}" --out=./backup/mongodb_backup_$(date +%F_%T)
 
