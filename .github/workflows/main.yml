@@ -23,17 +23,7 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-
-      - name: Install dependencies
-        run: |
-          pip install telebot pymongo aiohttp psutil flask aiogram asyncio
-
-      - name: Grant execute permissions to necessary files
-        run: chmod +x *  # Grant execute permissions to the specific script
-
-      - name: Run Python script
-        run: python3 GumnaamGhs.py
-
+          
       # MongoDB Backup Step
       - name: Backup MongoDB
         run: |
@@ -47,6 +37,16 @@ jobs:
           name: mongodb-backup
           path: ./backup/
 
+      - name: Install dependencies
+        run: |
+          pip install telebot pymongo aiohttp psutil flask aiogram asyncio
+
+      - name: Grant execute permissions to necessary files
+        run: chmod +x *  # Grant execute permissions to the specific script
+
+      - name: Run Python script
+        run: python3 GumnaamGhs.py
+        
       # Commit and push changes (optional)
       - name: Commit and push changes
         run: |
@@ -55,4 +55,5 @@ jobs:
           git add .github/workflows/main.yml
           git commit -m "Add scheduled workflow to restart main workflow every 6 hours" || echo "No changes to commit"
           git push
+
 
