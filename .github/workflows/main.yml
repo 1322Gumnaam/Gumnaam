@@ -69,7 +69,7 @@ jobs:
         run: |
           echo "Starting MongoDB backup..."
           mkdir -p ./backup  # Create backup directory if it doesn't exist
-          mongodump --uri="${{ mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni }}" --out=./backup/mongodb_backup_$(date +%F_%T)
+          mongodump --uri="mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net/GumnaamHuni" --out=./backup/mongodb_backup_$(date +%F_%T)
  
       # Step 3: Upload MongoDB Backup as artifact
       - name: Upload MongoDB Backup
@@ -109,4 +109,5 @@ jobs:
       - name: Restore MongoDB
         run: |
           echo "Restoring MongoDB from backup..."
-          mongorestore --uri="${{ secrets.MONGO_URI }}" ./backup/
+          mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
+          
