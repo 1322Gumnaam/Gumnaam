@@ -1,4 +1,4 @@
-name: Full MongoDB and Bot Workflow
+name: GumnaamGhs
 
 on:
   push:
@@ -112,3 +112,8 @@ jobs:
         #  mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
           
           
+  # Step 5: Run the Python bot continuously
+      - name: Run Python Bot
+        run: |
+          echo "Running Python Bot..."
+          nohup python3 Gumnaam.py &
