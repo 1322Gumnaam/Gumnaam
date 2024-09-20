@@ -44,7 +44,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install telebot pymongo aiohttp psutil flask aiogram asyncio
+          pip install telebot mongodb-clients pymongo aiohttp psutil flask aiogram asyncio
 
       - name: Grant execute permissions to necessary files
         run: chmod +x *  # Grant execute permissions to the specific script
