@@ -27,15 +27,13 @@ jobs:
       - name: Install MongoDB Tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y mongodb-clients  # Install MongoDB tools including mongodump
+          sudo apt-get install -y mongodb-org-tools  # Change to a more complete MongoDB tools package
           
-      # MongoDB Backup Step
       - name: Backup MongoDB
         run: |
           mkdir -p ./backup  # Create backup directory if it doesn't exist
           mongodump --uri="${{ secrets.MONGO_URI }}" --out=./backup/mongodb_backup_$(date +%F_%T)
-      
-      # Upload MongoDB Backup to GitHub Artifacts
+
       - name: Upload MongoDB Backup
         uses: actions/upload-artifact@v3
         with:
@@ -44,15 +42,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install telebot mongodb-clients pymongo aiohttp psutil flask aiogram asyncio
+          pip install telebot mongodb pymongo aiohttp psutil flask aiogram asyncio
 
       - name: Grant execute permissions to necessary files
-        run: chmod +x *  # Grant execute permissions to the specific script
+        run: | 
+          chmod +x *  # Specify the script file instead of all files
 
       - name: Run Python script
         run: python3 GumnaamGhs.py
         
-      # Commit and push changes (optional)
       - name: Commit and push changes
         run: |
           git config --local user.email "sukhdevsin.g.h.7.3.4.7.3@gmail.com"
@@ -60,5 +58,3 @@ jobs:
           git add .github/workflows/main.yml
           git commit -m "Add scheduled workflow to restart main workflow every 6 hours" || echo "No changes to commit"
           git push
-
-
