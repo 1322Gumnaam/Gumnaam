@@ -120,8 +120,8 @@ jobs:
       - name: Grant execute permissions
         run: |
           chmod +x *
-            chmod +x GumnaamGhs.pychmod +x Gumnaam.py
-            
+            chmod +x GumnaamGhs.py
+            chmod +x Gumnaam.py
           chmod +x keep_alive.py
           
               
