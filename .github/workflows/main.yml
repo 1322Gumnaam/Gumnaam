@@ -23,6 +23,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
+      - name: Install MongoDB Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mongodb-clients  # Install MongoDB tools including mongodump
           
       # MongoDB Backup Step
       - name: Backup MongoDB
