@@ -9,17 +9,17 @@ import asyncio
 API_TOKEN = '7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI'
 from pymongo import MongoClient
 import certifi
-MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
+MONGO_URI = 'mongodb+srv://Soul:JYAuvlizhw7wqLOb@soul.tsga4.mongodb.net'
 
 
-try:
-    client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-    db = client['GumnaamHuni']
-    print("MongoDB connection successful.")
-except Exception as e:
-    print("Failed to connect to MongoDB:", str(e))
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client['soul']
+users_collection = db.users
     
 ADMIN_ID = '1854133299'
+FORWARD_CHANNEL_ID = -1002181162852
+CHANNEL_ID = -1002181162852
+error_channel_id = -1002181162852
 MAX_RESTARTS = 5
 RESTART_PERIOD = 60  # Seconds
 
