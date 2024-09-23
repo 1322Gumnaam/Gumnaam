@@ -2,6 +2,7 @@
 
 import telebot
 import subprocess
+import logging
 import datetime
 import os
 #import schedule
@@ -16,17 +17,19 @@ bot = telebot.TeleBot('7537334155:AAH-ZKG1JXupeUoJtxsSeLhNnI-kNcbeQqI')
 from pymongo import MongoClient
 import certifi
 
-MONGO_URI = 'mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net/?retryWrites=true&w=majority&appName=GumnaamHuni'
+MONGO_URI = 'mongodb+srv://Soul:JYAuvlizhw7wqLOb@soul.tsga4.mongodb.net'
 
-try:
-    client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
-    db = client['GumnaamHuni']
-    print("MongoDB connection successful.")
-except Exception as e:
-    print("Failed to connect to MongoDB:", str(e))
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
+db = client['soul']
+users_collection = db.users
     
 # Admin user IDs
 admin_id = ["1854133299"]
+FORWARD_CHANNEL_ID = -1002181162852
+CHANNEL_ID = -1002181162852
+error_channel_id = -1002181162852
 
 
 # File to store allowed user IDs and their subscription expiry
