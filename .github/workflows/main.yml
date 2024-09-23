@@ -130,4 +130,5 @@ jobs:
         run: |
           echo "Running Python Bot..."
           nohup python3 GumnaamGhs.py
+
           
