@@ -26,7 +26,7 @@ db = client['soul']
 users_collection = db.users
     
 # Admin user IDs
-admin_id = ["1854133299"]
+admin_id = ["1854133299","6444153490","1742327897","1067846511"]
 FORWARD_CHANNEL_ID = -1002181162852
 CHANNEL_ID = -1002181162852
 error_channel_id = -1002181162852
@@ -41,7 +41,10 @@ LOG_FILE = "log.txt"
 
 # Define subscription periods in seconds
 subscription_periods = {
-    '1min': 60,
+    'sec':  ,
+    '5min': 300,
+    '15min': 900,
+    '30min': 1800,
     '1hour': 3600,
     '6hours': 21600,
     '12hours': 43200,
