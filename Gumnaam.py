@@ -41,7 +41,8 @@ LOG_FILE = "log.txt"
 
 # Define subscription periods in seconds
 subscription_periods = {
-    'sec':  ,
+    '1sec': 60,
+    '1min': 60,
     '5min': 300,
     '15min': 900,
     '30min': 1800,
