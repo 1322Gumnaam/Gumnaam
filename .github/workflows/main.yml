@@ -106,17 +106,18 @@ jobs:
       #    name: mongodb-backup
 
       # Step 4: Restore MongoDB
-      - name: Restore MongoDB
-        run: |
-          echo "Restoring MongoDB from backup..."
+     # - name: Restore MongoDB
+     #   run: |
+       #   echo "Restoring MongoDB from backup..."
         #  mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
-      
-        # Step 5: Install Dependencies for Python Bot
+
+        # step : Bot Start 😈
+        # Step 4: Install Dependencies for Python Bot
       - name: Install Python dependencies
         run: |
           pip install telebot pyTelegramBotApi pymongo aiohttp psutil flask aiogram asyncio
 
-      # Step 6: Grant execute permissions to necessary files
+      # Step 5: Grant execute permissions to necessary files
       - name: Grant execute permissions
         run: |
           chmod +x *
@@ -125,7 +126,7 @@ jobs:
           chmod +x keep_alive.py
           
               
-  # Step 7: Run the Python bot continuously
+  # Step 6: Run the Python bot continuously
       - name: Re-Run Python Bot
         run: |
           echo "Running Python Bot..."
