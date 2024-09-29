@@ -78,7 +78,7 @@ jobs:
        #   name: mongodb-backup
       #    path: ./backup/
 
-  restore-mongo:
+  Bot-Start:
     needs: backup-mongo
     runs-on: ubuntu-latest
     steps:
@@ -111,7 +111,6 @@ jobs:
        #   echo "Restoring MongoDB from backup..."
         #  mongorestore --uri= "mongodb+srv://GumnaamHuni:Goru1234@gumnaamhuni.wsvoh.mongodb.net      " ./backup
 
-        # step : Bot Start 😈
         # Step 4: Install Dependencies for Python Bot
       - name: Install Python dependencies
         run: |
