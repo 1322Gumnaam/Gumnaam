@@ -16,7 +16,7 @@ client = MongoClient(MONGO_URI, tlsCAFile=certifi.where())
 db = client['soul']
 users_collection = db.users
     
-ADMIN_ID = "1854133299" , "6444153490" , "1742327897" , "1798209383"
+ADMIN_ID = "1854133299 , 6444153490 , 1742327897 , 1798209383"
 FORWARD_CHANNEL_ID = -1002181162852
 CHANNEL_ID = -1002181162852
 error_channel_id = -1002181162852
